@@ -20,7 +20,15 @@
     },
     "cors": {
       "origin": true,
-      "credentials": true
+      "credentials": true,
+      "allowedHeaders": [
+        "X-Requested-With",
+        "If-None-Match",
+        "Content-Type"
+      ],
+      "exposedHeaders": [
+        "Content-Range"
+      ]
     },
     "errorHandler": {
       "disableStackTrace": false
