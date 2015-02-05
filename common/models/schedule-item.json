@@ -1,0 +1,37 @@
+{
+  "name": "scheduleItem",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "summary": {
+      "type": "string",
+      "index": true,
+      "required": true
+    },
+    "_id": {
+      "type": "string",
+      "id": true,
+      "required": false,
+      "index": true
+    },
+    "startTime": {
+      "type": "date",
+      "required": true,
+      "index": true
+    },
+    "endTime": {
+      "type": "date",
+      "index": true
+    },
+    "allDay": {
+      "type": "boolean"
+    },
+    "calendar": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
