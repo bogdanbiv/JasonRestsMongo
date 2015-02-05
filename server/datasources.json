@@ -4,6 +4,10 @@
     "connector": "memory"
   },
   "mongo": {
+    "port": 27017,
+    "database": "collections",
+    "username": "",
+    "password": "",
     "name": "mongo",
     "connector": "mongodb"
   }
