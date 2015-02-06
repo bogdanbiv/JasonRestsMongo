@@ -5,8 +5,8 @@
   "properties": {
     "summary": {
       "type": "string",
-      "index": true,
-      "required": true
+      "required": true,
+      "index": true
     },
     "_id": {
       "type": "string",
