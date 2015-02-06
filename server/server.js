@@ -15,6 +15,9 @@ app.start = function() {
   });
 };
 
+console.log('env ' + JSON.stringify(process.env.NODE_ENV));
+console.log('CWD: ' + process.cwd());
+
 // start the server if `$ node server.js`
 if (require.main === module) {
   app.start();

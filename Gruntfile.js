@@ -40,52 +40,54 @@
                 options:{
                     sourceDir: path.join(__dirname, 'server'),
                     index: 'server.js',
+                    cwd: path.join(__dirname),
                     max: 3,
+                    append: false,
+                    watch: true,
+                    watchIgnoreDotFiles: true,
+                    watchIgnorePatterns: ignoreFilesMattchingPatterns,
+                    watchDirectory: path.join(__dirname),
                 },
                 dev: {
                     options: {
-                        watch: true,
-                        watchIgnoreDotFiles: true,
-                        watchIgnorePatterns: ignoreFilesMattchingPatterns,
-                        watchDirectory: path.join(__dirname),
-                        cwd: path.join(__dirname, 'runs', 'dev'),
+                        env: {
+                            NODE_ENV: 'development',
+                        },
                         pidFile: 'JasonRestsMongo.pid',
+                        cwd: path.join(__dirname, 'runs', 'dev'),
                         logFile: path.join(__dirname, 'runs', 'dev', 'forever.log'),
                         // path.join(__dirname, '..', 'runs', 'helloWorld.out.log'),
                         outFile: path.join(__dirname, 'runs', 'dev', 'JasonRestsMongo.out.log'),
                         errFile: path.join(__dirname, 'runs', 'dev', 'JasonRestsMongo.err.log'),
-                        killTree: false,
-                        append: false,
+                        killTree: true,
                     },
-                },
-            },
-            forever: {
-                dev: {
-                    options: {
-                        index: 'server/server.js',
-                        logDir: 'logsZZ',
-                        pidFile: 'dev.pid',
-                        cwd: './runs/dev/'
-                    }
                 },
                 test: {
                     options: {
-                        index: 'otherindex.js',
-                        logDir: 'logs'
-                    }
+                        env: {
+                            NODE_ENV: 'test',
+                        },
+                        watchDirectory: path.join(__dirname, 'test'),
+                        pidFile: 'JasonRestsMongo.pid',
+                        cwd: path.join(__dirname, 'runs', 'test'),
+                        logFile: path.join(__dirname, 'runs', 'test', 'forever.log'),
+                        // path.join(__dirname, '..', 'runs', 'helloWorld.out.log'),
+                        outFile: path.join(__dirname, 'runs', 'test', 'JasonRestsMongo.out.log'),
+                        errFile: path.join(__dirname, 'runs', 'test', 'JasonRestsMongo.err.log'),
+                        killTree: true,
+                    },
                 },
-                e2e: {
+                testOnce: {
                     options: {
-                        index: 'otherindex.js',
-                        logDir: 'logs'
-                    }
-                },
-                prod: {
-                    options: {
-                        index: 'otherindex.js',
-                        logDir: 'logs'
-                    }
-                }
+                        watch: false,
+                        pidFile: 'JasonRestsMongo.pid',
+                        logFile: path.join(__dirname, 'runs', 'testOnce', 'forever.log'),
+                        // path.join(__dirname, '..', 'runs', 'helloWorld.out.log'),
+                        outFile: path.join(__dirname, 'runs', 'testOnce', 'JasonRestsMongo.out.log'),
+                        errFile: path.join(__dirname, 'runs', 'testOnce', 'JasonRestsMongo.err.log'),
+                        killTree: true,
+                    },
+                }, // prod, e2e test?
             },
             mochaTest: {
                 test: {
