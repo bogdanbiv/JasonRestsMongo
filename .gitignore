@@ -42,4 +42,10 @@ strongloop.json
 *.swp
 *.swo
 .DS_Store
+.directory
 
+# temporary runtime files
+# .npm-debug.log
+# tmp
+# temp
+#
