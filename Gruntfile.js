@@ -12,6 +12,8 @@
         var ignoreFilesMattchingPatterns = gi.replace(re1, '', 'gm')
             .replace(re2, '', 'gm').split('\n');
 
+        console.log('ignoreFilesMattchingPatterns: ' + ignoreFilesMattchingPatterns);
+
 
         grunt.initConfig({
             jsonlint: {
@@ -103,7 +105,6 @@
             }
         });
 
-        console.log('grunt ' + Object.keys(grunt));
         grunt.loadNpmTasks('grunt-forever-monitor');
         grunt.registerTask('validate', ['jsonlint', 'jshint']);
         grunt.registerTask('default', ['validate', 'forever-monitor:dev']);
