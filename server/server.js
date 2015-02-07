@@ -2,7 +2,11 @@ var loopback = require('loopback');
 var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
-
+if (typeof(process.env.NODE_ENV) !== 'string') {
+  console.log('NODE_ENV undefined, exiting');
+  process.exit(10); // forces exit
+  return 10; // this will never be reached, just for show!
+}
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
 boot(app, __dirname);
