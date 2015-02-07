@@ -1,0 +1,14 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongo": {
+    "name": "mongo",
+    "connector": "memory"
+  },
+  "emailDS": {
+    "name": "emailDS",
+    "connector": "mail"
+  }
+}
